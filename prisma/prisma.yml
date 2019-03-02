@@ -1,0 +1,16 @@
+#HTTP endpoint for the prisma API
+#endpoint: ''
+endpoint: https://eu1.prisma.sh/alexandra-swartz-e99cdd/hackernews-node/dev
+
+
+#Points to the file that contains the data model
+datamodel: datamodel.prisma
+
+#Specifies language and location for the generated Prisma client
+generate:
+  - generator: javascript-client
+    output: ../src/generated/prisma-client
+
+hooks: 
+  post-deploy:
+    - prisma generate
